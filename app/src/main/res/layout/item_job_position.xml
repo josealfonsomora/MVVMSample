@@ -7,14 +7,21 @@
 
         <variable
             name="model"
-            type="com.josealfonsomora.mvvmsample.featureJobs.models.JobPosition" />
+            type="com.josealfonsomora.mvvmsample.featureJobs.viewmodels.JobPositionAdapterItemViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="true"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/source"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/image"
@@ -34,6 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
             app:layout_constraintTop_toTopOf="parent"
+            android:text="@{model.company}"
             tools:text="Company Name" />
 
         <TextView
@@ -45,6 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/company"
+            android:text="@{model.role}"
             tools:text="Role Title" />
 
         <TextView
@@ -56,6 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/role"
+            android:text="@{model.tags}"
             tools:text="Android, US only" />
 
         <TextView
@@ -67,6 +77,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/tags"
+            android:text="@{model.date}"
             tools:text="Published on: 11/12/2019" />
 
         <TextView
@@ -79,6 +90,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date"
+            android:text="@{model.description}"
             tools:text="This is a description of a company that hires remotely and does a good product. This is very well architected and all developers want to contribute on it. Also this company pays a very good salary."
             tools:visibility="visible" />
 

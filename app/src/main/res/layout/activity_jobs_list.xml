@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.josealfonsomora.mvvmsample.featureJobs.JobsViewModel" />
+            type="com.josealfonsomora.mvvmsample.featureJobs.viewmodels.JobsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,5 +26,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:list="@{model.listLiveData}"
             tools:listitem="@layout/item_job_position" />
+
+        <ImageView
+            android:id="@+id/reload"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="32dp"
+            android:src="@drawable/ic_cloud_download_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="@{model.loadingVisibility}"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

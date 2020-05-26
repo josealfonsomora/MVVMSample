@@ -7,7 +7,6 @@ import com.josealfonsomora.mvvmsample.core.deserializers.JobsApiResponseDeserial
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
-import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -21,7 +20,7 @@ fun provideNetworkModule() = module {
 
     single {
         GsonBuilder()
-            .registerTypeAdapter(JobsApiResponseObject::class.java, JobsApiResponseDeserializer())
+            .registerTypeAdapter(RemoteOKResponse::class.java, JobsApiResponseDeserializer())
             .create()
     }
 
@@ -47,13 +46,6 @@ fun provideNetworkModule() = module {
 
     single {
         GsonConverterFactory.create(get())
-    }
-
-    single {
-        Retrofit.Builder()
-            .addConverterFactory(get<GsonConverterFactory>())
-            .addCallAdapterFactory(get<RxJava2CallAdapterFactory>())
-            .client(get<OkHttpClient>())
     }
 
 }
