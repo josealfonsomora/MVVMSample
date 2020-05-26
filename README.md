@@ -20,3 +20,8 @@
 - [ ] [Theme styling](https://medium.com/monzo-bank/refactoring-android-themes-with-style-restructuring-themes-15230569e50_) + dark mode
 - [ ] [Navigation Components](https://developer.android.com/guide/navigation/navigation-getting-started_)
 - [ ] [Augmented Reality](https://developers.google.com/ar/develop/java/quickstart) 
+
+
+## How it looks now
+
+![ScreenShot](https://user-images.githubusercontent.com/793226/82891891-c9323e00-9f4e-11ea-9a75-bffa774d0721.png)
