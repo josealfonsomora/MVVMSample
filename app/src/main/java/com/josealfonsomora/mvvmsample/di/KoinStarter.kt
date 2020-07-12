@@ -2,6 +2,7 @@ package com.josealfonsomora.mvvmsample.di
 
 import com.josealfonsomora.mvvmsample.SampleMVVMApplication
 import com.josealfonsomora.mvvmsample.featureJobs.di.provideJobsModule
+import com.josealfonsomora.mvvmsample.featureMaps.di.provideGoogleMapsModule
 import com.josealfonsomora.mvvmsample.network.provideNetworkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -19,7 +20,8 @@ fun SampleMVVMApplication.setupKoin() {
             listOf(
                 provideCoreModule(),
                 provideNetworkModule(),
-                provideJobsModule()
+                provideJobsModule(),
+                provideGoogleMapsModule()
             )
         )
     }
